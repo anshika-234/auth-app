@@ -1,0 +1,130 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-bg {
+  position: relative;
+  min-height: 100vh;
+
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* overlay */
+.auth-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  z-index: 0;
+}
+.auth-bg > * {
+  position: relative;
+  z-index: 5;
+}
+
+/* DASHBOARD */
+.dashboard-bg {
+  min-height: 100vh;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dashboard-section h1 {
+  color: #f76838;
+  margin: 20px;
+  font-family: cursive;
+}
+
+/* Navbar */
+
+.navbar-section {
+  background: rgba(0, 0, 0, 0.1);
+  height: 60px;
+  border-bottom: White;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar-section a {
+  color: White;
+  font-size: 1.5em;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+/* ALL FORM */
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section {
+  width: 100%;
+  max-width: 320px;
+  padding: 15px 25px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.form div label {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #1f2937;
+  font-weight: 500;
+}
+.form div input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px;
+}
+.form div input::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+.form div input:focus {
+  outline: none !important;
+  border-bottom-color: #cccccc !important;
+  box-shadow: none !important;
+}
+.btn {
+  background: #4d4205;
+  color: #cccccc;
+  height: 50px;
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+}
+
+.btn:hover {
+  background-color: #f91a06;
+  color: white;
+}
+.account-exists {
+  display: flex;
+  margin-top: 10px;
+}
+.account-exists a {
+  color: #f91a06;
+  margin-left: 10px;
+}
+.forgot-password a {
+  color: #f91a06;
+  margin-top: 0aq;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .form-section {
+    max-width: 500px;
+  }
+}
