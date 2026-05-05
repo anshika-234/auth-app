@@ -11,7 +11,10 @@ const errorHandlerController = require("./Controllers/ErrorHandlerController");
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "https://auth-app-frontend-76wm.onrender.com",
+      "https://auth-backend-b6kg.onrender.com",
+    ],
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
     credentials: true,
   }),
