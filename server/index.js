@@ -23,13 +23,13 @@ app.use("/api/v1/auth", authRoutes);
 
 mongoose
   .connect(MONGO_URL)
-  .then(() => console.log("✅ MongoDB Connected!"))
-  .catch((err) => console.error("❌ MongoDB Error:", err));
+  .then(() => console.log("MongoDB Connected!"))
+  .catch((err) => console.error("MongoDB Error:", err));
 
 const port = PORT || 5000;
 
-app.get("/api/test", (req, res) => {
-  res.json({ message: "API working" });
+app.get("/", (req, res) => {
+  res.json({ message: "Server is running..." });
 });
 
 app.use(errorHandlerController.errorHandler);
