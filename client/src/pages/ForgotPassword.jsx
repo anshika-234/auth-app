@@ -10,6 +10,7 @@ function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
   const handleSubmit = async (e) => {
+    console.log("FORM SUBMITTED");
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
