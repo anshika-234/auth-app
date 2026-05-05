@@ -26,9 +26,8 @@ function Logout() {
           { withCredentials: true },
         );
 
-        setUser(null);
         toast.success("You logged out successfully");
-
+        setUser(null);
         navigate("/login");
       } catch (err) {
         toast.error(err.response?.data?.message || "Logout failed");

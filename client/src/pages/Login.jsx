@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useState, useContext } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+const API = import.meta.env.VITE_API_URL;
 
 function Login() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Login() {
     if (!validate()) return;
     setLoading(true);
     try {
-      const response = await axios.post("/api/v1/auth/login", formData, {
+      const response = await axios.post(`${API}/api/v1/auth/login`, formData, {
         withCredentials: true,
       });
       toast.success("Login successfull");
