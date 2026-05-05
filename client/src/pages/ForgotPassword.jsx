@@ -8,7 +8,7 @@ function ForgotPassword() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({});
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -26,9 +26,7 @@ function ForgotPassword() {
       } else {
         toast.success("Check your email for reset link");
       }
-      toast.success(
-        "We're sending reset token to your Email. Please check your email",
-      );
+      setEmail("");
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong");
     } finally {
@@ -54,6 +52,7 @@ function ForgotPassword() {
             <input
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
+              type="email"
               value={email}
               className={`form-control mt-2 ${errors.email ? "is-invalid" : ""}`}
             />
