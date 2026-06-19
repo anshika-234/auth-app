@@ -113,9 +113,7 @@ module.exports.forgotPassword = async (req, res, next) => {
     const resetToken = user.createResetPasswordToken();
     await user.save({ validateBeforeSave: false });
 
-    const resetUrl = `${req.protocol}://${req.get(
-      "host",
-    )}/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
     await sendMail({
       to: user.email,
       subject: "Password Reset Token",
