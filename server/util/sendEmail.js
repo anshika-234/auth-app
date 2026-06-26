@@ -11,7 +11,7 @@ const sendMail = async ({ to, subject, text }) => {
       from: "onboarding@resend.dev",
       to,
       subject,
-      test,
+      text,
     }),
   });
   if (!response.ok) {
