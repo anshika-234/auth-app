@@ -22,7 +22,7 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24,
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: process.env.NODE_ENV === "production",
     });
 
@@ -56,7 +56,7 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24,
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       secure: process.env.NODE_ENV === "production",
     });
 
@@ -76,7 +76,7 @@ module.exports.Login = async (req, res, next) => {
 module.exports.logout = async (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     secure: process.env.NODE_ENV === "production",
   });
 
@@ -162,14 +162,3 @@ module.exports.resetPassword = async (req, res, next) => {
     next(err);
   }
 };
-
-// module.exports.adminDahboard = async (req, res) => {
-//   res.status(200).json({
-//     message: "Welcome Admin",
-//     user: {
-//       id: req.user._id,
-//       email: req.user.email,
-//       role: req.user.role,
-//     },
-//   });
-// };

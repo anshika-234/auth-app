@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom";
 const API = import.meta.env.VITE_API_URL;
 
 function ForgotPassword() {
-  const [loading, setLoading] = useState(false);
+  const { setLoading } = useContext(UserContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
   const handleSubmit = async (e) => {
-    console.log("FORM SUBMITTED");
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);

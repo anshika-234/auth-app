@@ -6,11 +6,12 @@ const API = import.meta.env.VITE_API_URL;
 
 function ResetPassword() {
   let { token } = useParams();
+  const { setLoading } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+
   const [errors, setErrors] = useState("");
 
   const handleSubmit = async (e) => {

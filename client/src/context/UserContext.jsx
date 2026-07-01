@@ -7,6 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchUser = async () => {

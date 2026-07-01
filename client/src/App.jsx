@@ -13,9 +13,11 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 function App() {
   const location = useLocation();
-  const { user } = useContext(UserContext);
-
+  const { user, loading } = useContext(UserContext);
   const isAuthPage = location.pathname === "/dashboard";
+  if (loading) {
+    return "Loading...";
+  }
 
   return (
     <div className={isAuthPage ? "dashboard-bg" : "auth-bg"}>
