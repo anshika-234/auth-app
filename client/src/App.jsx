@@ -15,9 +15,12 @@ function App() {
   const location = useLocation();
   const { user, loading } = useContext(UserContext);
   const isAuthPage = location.pathname === "/dashboard";
-  if (loading) {
-    return "Loading...";
-  }
+
+  const isPublicRoute =
+    ["/forgot-password", "/signup", "/login"].includes(location.pathname) ||
+    location.pathname.startsWith("/reset-password");
+
+  if (loading && !isPublicRoute) return null;
 
   return (
     <div className={isAuthPage ? "dashboard-bg" : "auth-bg"}>

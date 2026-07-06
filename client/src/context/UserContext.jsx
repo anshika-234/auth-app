@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
       }
     };
 
-    fetchUser(); // ✅ now works
+    fetchUser(); 
   }, []);
 
   return (
