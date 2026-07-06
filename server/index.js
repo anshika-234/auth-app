@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 require("dotenv").config();
 const { MONGO_URL, PORT } = process.env;
 const authRoutes = require("./Routes/AuthRoutes");
@@ -34,7 +35,10 @@ const port = PORT || 5000;
 app.get("/", (req, res) => {
   res.json({ message: "Server is running..." });
 });
-
+app.use(express.static(path.join(__dirname, "../client/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 app.use(errorHandlerController.errorHandler);
 app.listen(port, () => {
   console.log(`Server: http://localhost:${port}`);
