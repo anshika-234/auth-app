@@ -32,14 +32,14 @@ mongoose
 
 const port = PORT || 5000;
 
-app.get("/", (req, res) => {
-  res.json({ message: "Server is running..." });
-});
 app.use(express.static(path.join(__dirname, "../client/dist")));
-app.get("*", (req, res) => {
+
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
+
 app.use(errorHandlerController.errorHandler);
+
 app.listen(port, () => {
   console.log(`Server: http://localhost:${port}`);
 });
