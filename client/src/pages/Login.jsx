@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useState, useContext } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || "";
 
 function Login() {
   const navigate = useNavigate();

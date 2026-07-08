@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || "";
 
 function ForgotPassword() {
   const [loading, setLoading] = useState(false);

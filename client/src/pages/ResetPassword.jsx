@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useParams, useNavigate } from "react-router-dom";
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || "";
 
 function ResetPassword() {
   let { token } = useParams();
