@@ -7,7 +7,7 @@ import { UserContext } from "../context/UserContext";
 const API = import.meta.env.VITE_API_URL;
 
 function Signup() {
-  const { setUser , setLoading } = useContext(UserContext);
+  const { setUser, setLoading, loading } = useContext(UserContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userName: "",
@@ -17,7 +17,6 @@ function Signup() {
   });
 
   const [errors, setErrors] = useState({});
-  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

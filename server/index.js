@@ -15,6 +15,7 @@ app.use(
     origin: [
       "https://auth-app-frontend-76wm.onrender.com",
       "https://auth-backend-b6kg.onrender.com",
+      "http://localhost:5173",
     ],
     methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
     credentials: true,
