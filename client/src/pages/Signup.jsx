@@ -7,7 +7,8 @@ import { UserContext } from "../context/UserContext";
 const API = import.meta.env.VITE_API_URL;
 
 function Signup() {
-  const { setUser, setLoading, loading } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userName: "",
