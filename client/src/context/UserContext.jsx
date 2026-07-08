@@ -21,11 +21,11 @@ export const UserProvider = ({ children }) => {
       }
     };
 
-    fetchUser(); 
+    fetchUser();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, loading, setLoading }}>
       {children}
     </UserContext.Provider>
   );

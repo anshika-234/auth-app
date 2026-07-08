@@ -111,7 +111,7 @@ function Signup() {
               id="name"
               name="userName" // Fixed: matches state
               type="text"
-              placeholder="Please enter a username"
+              placeholder="Please enter your name"
               onChange={handleChange}
               value={formData.userName}
               className={`form-control ${errors.userName ? "is-invalid" : ""}`}

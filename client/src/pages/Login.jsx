@@ -28,12 +28,13 @@ function Login() {
       const response = await axios.post(`${API}/api/v1/auth/login`, formData, {
         withCredentials: true,
       });
-      toast.success("Login successfull");
+
       navigate("/dashboard");
       setUser({
         userName: response.data.user.userName,
         email: response.data.user.email,
       });
+      toast.success("Login successfull");
       setFormData({
         email: "",
         password: "",
