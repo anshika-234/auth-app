@@ -8,7 +8,8 @@ const API = import.meta.env.VITE_API_URL;
 
 function Login() {
   const navigate = useNavigate();
-  const { setUser, setLoading, loading } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",

@@ -8,7 +8,8 @@ const API = import.meta.env.VITE_API_URL;
 
 function Logout() {
   const navigate = useNavigate();
-  const { setUser, setLoading } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
 
   const hasRun = useRef(false); // prevents double execution
 

@@ -6,7 +6,7 @@ const API = import.meta.env.VITE_API_URL;
 
 function ResetPassword() {
   let { token } = useParams();
-  const { setLoading } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
